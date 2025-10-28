@@ -6,7 +6,7 @@ def generator_numbers(text: str) -> Iterator[float]:
     This generator extracts integer and decimal numbers from a text
     and yields each number as a float.
     """
-    for match in re.findall(r'\d+(?:\.\d+)?', text):
+    for match in re.findall(r'\b\d+(?:\.\d+)?\b', text):
         yield float(match)
 
 def sum_profit(text: str, func: Callable[[str], Iterator[float]]) -> float:
